@@ -10,6 +10,7 @@ import java.util.ArrayList;
 //import collections
 import java.util.Collections;
 
+import edu.guilford.Deck.Card;
 //import pane
 import javafx.scene.layout.Pane;
 import java.io.IOException;
@@ -31,12 +32,15 @@ public class GameDisplay extends Application {
 
         
         //make a deck
-        deck.deckgen();
+        ArrayList<Card> playdeck = deck.deckgen();
         //shuffle the deck
-        Collections.shuffle(deck.deckgen());
+        Collections.shuffle(playdeck);
+        //make a hand for the player with 5 cards
+        //ArrayList<Card> playerhand = deck.handgen(deck, 5);
+
         //ArrayList had1 = Hand.handgen(deck, 5);
         //print the deck
-        System.out.println(deck.toString());
+        System.out.println(playdeck); 
         scene = new Scene(pane , 800, 600);
         stage.setScene(scene);
         stage.show();
